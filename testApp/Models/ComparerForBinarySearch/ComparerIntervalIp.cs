@@ -11,8 +11,6 @@ namespace testApp.Models.ComparerForBinarySearch
         int index = -1;
         public int Compare(IntervalIp x, IntervalIp y)
         {
-            
-            
             return index;
         }
     }
