@@ -23,7 +23,9 @@ namespace testApp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IFileSevice, FileService>();
+            services.AddSingleton<IFileReader, FileReader>();
+            services.AddSingleton<FileReadService>();
+
             services.AddControllersWithViews();
         }
 

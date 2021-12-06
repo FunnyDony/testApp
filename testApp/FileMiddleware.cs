@@ -10,8 +10,8 @@ namespace testApp
     public class FileMiddleware
     {
         private readonly RequestDelegate _next;
-        FileService _fileService;
-        public FileMiddleware(RequestDelegate next, FileService fileService)
+        FileReader _fileService;
+        public FileMiddleware(RequestDelegate next, FileReader fileService)
         {
             _next = next;
             _fileService = fileService;

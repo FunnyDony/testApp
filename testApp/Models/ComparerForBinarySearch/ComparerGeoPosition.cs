@@ -6,11 +6,11 @@ using testApp.Models.DbData;
 
 namespace testApp.Models.ComparerForBinarySearch
 {
-    public class ComparerGeoPosition : IComparer<GeoPosition>
-    {
-        public int Compare(GeoPosition x, GeoPosition y)
-        {
-          if(x.)
-        }
-    }
+    //public class ComparerGeoPosition : IComparer<GeoPosition>
+    //{
+    //    public int Compare(GeoPosition x, GeoPosition y)
+    //    {
+    //        return index;
+    //    }
+    //}
 }

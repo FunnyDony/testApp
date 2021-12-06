@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using testApp.Models.DbData;
 using testApp.Services;
 
 namespace testApp.Controllers
@@ -10,21 +11,27 @@ namespace testApp.Controllers
     [Controller]
     public class FindController : Controller
     {
-        IFileSevice _fileService;
+        IFileReader _fileService;
+
+        public FindController(IFileReader fileService)
+        {
+            _fileService = fileService;
+        }
 
         [HttpGet]
         [Route("ip/location")]
         public ActionResult FindCity(string ip)
         {
-            _fileService.FindIp(ip);
-            return Json(_fileService.FindIp(ip));
+           List<GeoPosition> geoPosition = _fileService.FindIp(ip);
+            return Json(geoPosition);
         }
 
         [HttpGet]
         [Route("city/locations")]
-        public string FindIp(string city)
+        public ActionResult FindIp(string city)
         {
-            return $"Hello {city}";
+            IntervalIp intervalIp = _fileService.FindLocation(city);
+            return Json(intervalIp);
         }
     }
 }
