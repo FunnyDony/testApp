@@ -11,7 +11,7 @@ namespace testApp.Services
 {
    
     /// <summary>
-    /// Реализация сервис для работы с файлом .dat.
+    /// Реализация сервиса для работы с файлом .dat.
     /// Чтение и поиск информации
     /// </summary>
     public class FileReader : IFileReader

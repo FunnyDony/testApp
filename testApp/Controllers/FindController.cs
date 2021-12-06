@@ -19,6 +19,19 @@ namespace testApp.Controllers
         }
 
         [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AA(string city)
+        {
+            IntervalIp intervalIp = _fileService.FindLocation(city);
+            return Json(intervalIp);
+        }
+
+        [HttpGet]
         [Route("ip/location")]
         public ActionResult FindCity(string ip)
         {
@@ -33,5 +46,7 @@ namespace testApp.Controllers
             IntervalIp intervalIp = _fileService.FindLocation(city);
             return Json(intervalIp);
         }
+
+       
     }
 }
