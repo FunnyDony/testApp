@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using testApp.Models.ComparerForBinarySearch;
 using testApp.Models.DbData; 
 
 namespace testApp.Services
@@ -137,17 +136,12 @@ namespace testApp.Services
             IPAddress iPAddress;
             IPAddress.TryParse(ip, out iPAddress);
             List<GeoPosition> result = new List<GeoPosition>();
-            // ComparerGeoPosition comparerGeo = new ComparerGeoPosition();
-            // ComparerIntervalIp comparerIntIp = new ComparerIntervalIp();
 
             for (int i = 0; i < IntervalIps.Count; i++)
             {
                if( IPAddressesRange(IPAddress.Parse(IntervalIps[i].Ip_from),IPAddress.Parse( IntervalIps[i].Ip_to), iPAddress))
                     result.Add(GeoPositions[i]);
             }
-
-            // memoryIndex = IntervalIps.BinarySearch(new IntervalIp(iPAddress, null, 0), comparerIntIp);
-            // indexCyti = GeoPositions.BinarySearch(new GeoPosition(null, null, null, null, null, 0, 0, (uint)memoryIndex), comparerGeo);
             return result;
         }
 
