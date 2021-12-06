@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace testApp.Models.DbData
 {
+   /// <summary>
+   /// Модель  для описания местоположения
+   /// </summary>
     [Serializable()]
     public class GeoPosition
     {

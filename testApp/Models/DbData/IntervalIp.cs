@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace testApp.Models.DbData
 {
+    /// <summary>
+    /// Модель для хранения интервала IP адресов
+    /// </summary>
     [Serializable()]
     public class IntervalIp
     {

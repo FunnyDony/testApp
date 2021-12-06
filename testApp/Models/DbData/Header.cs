@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace testApp.Models.DbData
 {
+    /// <summary>
+    /// Заголовок БД
+    /// </summary>
     [Serializable()]
     public class Header
     {
