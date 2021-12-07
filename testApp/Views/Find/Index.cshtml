@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<testApp.Models.DateIpOpCyti>
+@{
 
     Layout = null;
 }
@@ -74,12 +75,13 @@
                 </div>
                 <div class="row">
                     <div class="col-1-2">
-                        <input type = "text" name="IP">
-                        <button id="say">Поиск!</button>
+                        <input type="text" name="IP">
+                        <input type="submit" value="Отправить" />
                     </div>
                     <div class="col-1-2">
                         <input type="text" name="Cyti">
-                        <button id="say">Поиск!</button>
+                        <input type="submit" value="Отправить" />
+                        @*<button id="say">Поиск!</button>*@
                     </div>
                 </div>
                 <div class="row">
@@ -93,12 +95,12 @@
 
 
 
-    
-    
 
-    
 
-   
+
+
+
+
     <footer></footer>
 </body>
 </html>
