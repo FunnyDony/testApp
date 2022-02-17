@@ -31,27 +31,27 @@ namespace testApp
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                //endpoints.MapDefaultControllerRoute();
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Find}/{action=Index}");
-            });
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Home/Error");
+            //    app.UseHsts();
+            //}
+            //
+            //app.UseStaticFiles();
+            //
+            //app.UseRouting();
+            //
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    //endpoints.MapDefaultControllerRoute();
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Find}/{action=Index}");
+            //});
         }
     }
 }
