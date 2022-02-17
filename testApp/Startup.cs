@@ -35,16 +35,16 @@ namespace testApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            //else
-            //{
-            //    app.UseExceptionHandler("/Home/Error");
-            //    app.UseHsts();
-            //}
-            //
-            //app.UseStaticFiles();
-            //
-            //app.UseRouting();
-            //
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+            
+            app.UseStaticFiles();
+            
+            app.UseRouting();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
