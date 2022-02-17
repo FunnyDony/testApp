@@ -41,9 +41,9 @@ namespace testApp
                 app.UseHsts();
             }
 
-           // app.UseStaticFiles();
+            app.UseStaticFiles();
 
-          //  app.UseRouting();
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
