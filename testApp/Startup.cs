@@ -45,13 +45,13 @@ namespace testApp
             //
             //app.UseRouting();
             //
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    //endpoints.MapDefaultControllerRoute();
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Find}/{action=Index}");
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Find}/{action=Index}");
+            });
         }
     }
 }
