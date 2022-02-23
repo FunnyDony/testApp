@@ -176,11 +176,11 @@ namespace testApp.Services
         /// <summary>
         /// Поиск интервала адресов по названию города
         /// </summary>
-        /// <param name="cyti"></param>
+        /// <param name="city"></param>
         /// <returns></returns>
-        public IntervalIp FindLocation(string cyti)
+        public IntervalIp FindLocation(string city)
         {
-            string st = cyti.Replace(" ", "");
+            string st = city.Replace(" ", "");
 
             for (int i = 0; i < IntervalIps.Count; i++)
             {

@@ -1,14 +1,18 @@
-﻿@model IEnumerable<testApp.Models.DateIpOpCyti>
+
 @{
+
 
     Layout = null;
 }
+
+<!DOCTYPE html>
+
 <html>
 <head>
     <title>Поиск</title>
     <style>
         H1 {
-            font-size: 120%;
+            font-size: 70%;
             font-family: Verdana, Arial, Helvetica, sans-serif;
             color: #333366;
         }
@@ -20,7 +24,7 @@
 
         .container {
             width: 100%;
-            max-width: 1024px;
+            max-width: 1980px;
             padding: 15px;
             margin: 0 auto;
         }
@@ -66,41 +70,55 @@
 <body>
     <div class="H1"></div>
     <div class="main">
-        <form method="post">
-            <input type="hidden" value="@ViewBag.DateIpOpCyti" name="DateIpOpCyti" />
-            <div class="container">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-1-3">Поиск по Ip адресу:</div>
+                <div class="col-2-3">Поиск по названию города:</div>
+            </div>
+            <div class="row">
+                <div class="col-1-2">
+
+
+                    <form method="get" action="/ip/location">
+                        <input type="text" name="IP" value="@ViewBag.Ip">
+                        <input type="submit" value="Отправить" />
+
+                    </form>
+
+                </div>
                 <div class="row">
-                    <div class="col-1-3">Поиск по Ip адресу:</div>
-                    <div class="col-2-3">Поиск по местоположению:</div>
+                    <div class="col-2-3">
+
+                        <form method="get" action="/city/locations">
+                            <input type="text" name="City" value="@ViewBag.City">
+                            <input type="submit" value="Отправить" />
+                        </form>
+
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-1-2">
-                        <input type="text" name="IP">
-                        <input type="submit" value="Отправить" />
+                        @*@if (ViewBag.GeoPosition != null)*@
+                        
+                            @await Html.PartialAsync("FindCity")
+                        
+
+
                     </div>
-                    <div class="col-1-2">
-                        <input type="text" name="Cyti">
-                        <input type="submit" value="Отправить" />
-                        @*<button id="say">Поиск!</button>*@
+
+                    <div class="col-2-3">
+
+                        @*@if (ViewBag.IntervalIp != null)*@
+                        
+                            @await Html.PartialAsync("FindIp")
+                        
+
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-1-2">Test</div>
-                    <div class="col-1-2">Tes2</div>
                 </div>
             </div>
-        </form>
     </div>
-
-
-
-
-
-
-
-
-
-
     <footer></footer>
 </body>
 </html>

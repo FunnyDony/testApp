@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Threading.Tasks;
 using testApp.Models;
+
 using testApp.Models.DbData;
 using testApp.Services;
 
@@ -23,6 +24,11 @@ namespace testApp.Controllers
         public ActionResult Index()
         {
 
+          //List<GeoPosition> geoPosition = _fileService.FindIp("1.0.0.1");
+         // IntervalIp intervalIp = _fileService.FindLocation("cit_Olobi Abu U");
+
+
+
             return View();
         }
 
@@ -38,7 +44,6 @@ namespace testApp.Controllers
 
             //if (!string.IsNullOrWhiteSpace(ip))
             //    intervalIp = _fileService.FindLocation(ip);
-
             return View();
         }
 
@@ -54,7 +59,10 @@ namespace testApp.Controllers
         public ActionResult FindCity(string ip)
         {
            List<GeoPosition> geoPosition = _fileService.FindIp(ip);
-            return Json(geoPosition);
+            //return Json(geoPosition);
+            ViewBag.GeoPosition = (geoPosition);
+           return View("Index");
+          //  return PartialView();
         }
 
         [HttpGet]
@@ -62,9 +70,11 @@ namespace testApp.Controllers
         public ActionResult FindIp(string city)
         {
             IntervalIp intervalIp = _fileService.FindLocation(city);
-            return Json(intervalIp);
-        }
+            // return Json(intervalIp);
+            ViewBag.IntervalIp = (intervalIp);
+            return View("Index");
 
-       
+           // return PartialView();
+        }
     }
 }

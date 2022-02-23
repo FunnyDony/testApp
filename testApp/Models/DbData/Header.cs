@@ -22,8 +22,10 @@ namespace testApp.Models.DbData
 
         [NonSerialized]
         public static readonly int lenghtHeader = 60;
+
         [NonSerialized]
         public static readonly int lenghtName = 60;
+
         public Header(int version,string name, DateTime timestamp,int records, uint offset_ranges, uint offset_cities, uint offset_locations)
         {
            Version            = version;
@@ -33,13 +35,7 @@ namespace testApp.Models.DbData
            Offset_ranges   = offset_ranges;
            Offset_cities     = offset_cities;
            Offset_locations= offset_locations;
-
         }
 
-    //    var d = new Data();
-    //    var sI32 = sizeof(Int32);
-    //    d._int1 = BitConverter.ToInt32(bytes, 0);
-    //d._int2 = BitConverter.ToInt32(bytes, sI32);
-    //d._short1 = BitConverter.ToInt16(bytes, 2*sI32);
     }
 }

@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*@model List<testApp.Models.DbData.GeoPosition>*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FindIp</title>
+</head>
+<body>
+   @if (ViewBag.GeoPosition != null)
+    {
+
+        <table>
+            <thead>
+                <tr>
+                    <td> Страна </td>
+                    <td> Область</td>
+                    <td> Индекс </td>
+                    <td> Город </td>
+                    <td> Организация </td>
+                    <td> Широта </td>
+                    <td> Долгота</td>
+                    <td> номер индекса </td>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var data in ViewBag.GeoPosition)
+                {
+                    <tr>
+                        <td> @data.Country </td>
+                        <td> @data.Region2</td>
+                        <td> @data.Postal2 </td>
+                        <td> @data.City </td>
+                        <td> @data.Organization </td>
+                        <td> @data.Latitude </td>
+                        <td> @data.Longitude</td>
+                        <td> @data.LocationMemoryIndex </td>
+                    </tr>
+                }
+
+                
+            </tbody>
+        </table>
+    }
+    </body>
+</html>
